@@ -18,20 +18,5 @@ namespace Calculator
             Assert.That(result.Reminder, Is.EqualTo(1));
         }   
     }
-
-    internal class DivideResult
-    {
-        public int Quotient { get; set; }
-        public int Reminder { get; set; }
-    }
-
-    internal class CalcularoService
-    {
-        internal DivideResult Divide(int x, int y)
-        {
-            int quotient = x / y;
-            int reminder = x% y;
-            return new DivideResult { Quotient = quotient, Reminder = reminder };
-        }
-    }
+   
 }
