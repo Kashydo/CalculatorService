@@ -16,8 +16,7 @@ namespace Calculator
             }
             int quotient = x / y;
             int reminder = x % y;
-            DivideResult result = new DivideResult { Quotient = quotient, Reminder = reminder };
-            return result;
+            return new DivideResult { Quotient = quotient, Reminder = reminder };
         }
     }
 }
