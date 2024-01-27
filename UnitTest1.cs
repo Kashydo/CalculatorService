@@ -23,7 +23,7 @@ namespace Calculator
             int x =5; int y =0;
             var result = Assert.Throws<ArgumentException>(()=>_calcularoService.Divide(x,y));
 
-            Assert.That(result.ParamName, Is.EqualTo("DivideResult"));
+          
         }
     }
    

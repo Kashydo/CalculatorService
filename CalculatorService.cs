@@ -10,9 +10,14 @@ namespace Calculator
     {
         internal DivideResult Divide(int x, int y)
         {
+            if (y == 0)
+            {
+                throw new ArgumentException("Can't divide by 0");
+            }
             int quotient = x / y;
             int reminder = x % y;
-            return new DivideResult { Quotient = quotient, Reminder = reminder };
+            DivideResult result = new DivideResult { Quotient = quotient, Reminder = reminder };
+            return result;
         }
     }
 }
