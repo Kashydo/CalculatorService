@@ -4,7 +4,9 @@ namespace Calculator
     public class Tests
     {
         private readonly CalcularoService _calcularoService;
-        public Tests() { }
+        public Tests() { 
+        _calcularoService = new CalcularoService();
+        }
 
         [Test]
         public void WhenCalculatorDividesReturnDivideResult()
@@ -12,14 +14,14 @@ namespace Calculator
             int x =5; int y =2;
             DivideResult result = _calcularoService.Divide(x,y);
             Assert.NotNull(result);
-            Assert.That(result.Divide, Is.EqualTo(2));
-            Assert.That(result.Reminder, Is.EqualTo(5));
+            Assert.That(result.Quotient, Is.EqualTo(2));
+            Assert.That(result.Reminder, Is.EqualTo(1));
         }   
     }
 
     internal class DivideResult
     {
-        public int Divide { get; set; }
+        public int Quotient { get; set; }
         public int Reminder { get; set; }
     }
 
@@ -27,7 +29,9 @@ namespace Calculator
     {
         internal DivideResult Divide(int x, int y)
         {
-            throw new NotImplementedException();
+            int quotient = x / y;
+            int reminder = x% y;
+            return new DivideResult { Quotient = quotient, Reminder = reminder };
         }
     }
 }
